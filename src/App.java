@@ -15,7 +15,7 @@ public class App {
      */
     public static void main(String[] args) throws Exception {
         // fazer a conexão HTTP e buscar os top 250 filmes
-        String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
+        String url = "https://api.mocki.io/v2/549a5d8b/Top250Movies";
         URI endereco = URI.create(url);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(endereco).GET().build();
@@ -28,12 +28,15 @@ public class App {
 
         // exibir e manipular os dados
         var geradora = new GeradoraDeFigurinhas();
-        for (Map<String,String> filme : listaDeFilmes) {
-            String urlImage = filme.get("image");
+        for (int i = 0; i < 10; i++) {
+            Map<String,String> filme = listaDeFilmes.get(i);
+
+            String urlImagem = filme.get("image");
+
             String titulo = filme.get("title");
-            InputStream inputStream = new URL(urlImage).openStream();
-            
-            String nomeArquivo = titulo + ".png";
+
+            InputStream inputStream = new URL(urlImagem).openStream();            
+            String nomeArquivo ="../saida/" + titulo + ".png";
             
             geradora.cria(inputStream, nomeArquivo);
             
