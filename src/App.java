@@ -24,8 +24,8 @@ public class App {
             String nomeArquivo = "saida/" + conteudo.getTitulo() + ".png";
             
             geradora.cria(inputStream, nomeArquivo);
-           
-
+            
+            
             System.out.println(conteudo.getTitulo());
             System.out.println();
 
