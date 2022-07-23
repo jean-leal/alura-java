@@ -17,7 +17,7 @@ public class ExtratorDeConteudoDoIMDB implements ExtratorDeConteudo {
         for (Map<String, String> atributos : listaDeAtributos) {
             String titulo = atributos.get("title");
             String urlImagem = atributos.get("image");
-          
+            
             var conteudo = new Conteudo (titulo, urlImagem);
 
             conteudos.add(conteudo);

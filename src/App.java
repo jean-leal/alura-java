@@ -6,8 +6,11 @@ public class App {
     
     public static void main(String[] args) throws Exception {
         // fazer a conexão HTTP e buscar os top 250 filmes
-        String url = "https://api.nasa.gov/planetary/apod?api_key=oxiL3pB1vTzZ54Rj0vNCpcwcPK2b7BHmFJTolkHi";
-        ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+       // String url = "https://api.nasa.gov/planetary/apod?api_key=oxiL3pB1vTzZ54Rj0vNCpcwcPK2b7BHmFJTolkHi";
+       // ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+
+        String url = "http://localhost:8080/linguagens";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         //String url = "https://api.nasa.gov/planetary/apod?api_key=oxiL3pB1vTzZ54Rj0vNCpcwcPK2b7BHmFJTolkHi";
         //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
